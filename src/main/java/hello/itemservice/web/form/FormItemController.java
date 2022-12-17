@@ -32,7 +32,9 @@ public class FormItemController {
     }
 
     @GetMapping("/add")
-    public String addForm() {
+    public String addForm(Model model) {
+        // 화면에 빈 아이템 객체 넘겨줌 --> th:object, th:field 사용 가능!!
+        model.addAttribute("item", new Item());
         return "form/addForm";
     }
 
